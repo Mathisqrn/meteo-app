@@ -3,7 +3,8 @@ services:
     image: dunglas/frankenphp
     ports:
       - "8080:80"
-      - "443:443"
     volumes:
       - ./app:/app
     working_dir : /app
+    environment:
+      - SERVER_NAME=:8080
