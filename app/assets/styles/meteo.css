@@ -3,7 +3,7 @@
 }
 
 body {
-    min-height: 100vh ;
+    min-height: 100vh;
     transition: background 1s ease;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display';
 }
@@ -57,6 +57,25 @@ body.meteo-orage {
     text-align: center;
 }
 
+.infos-principales {
+    padding: 20px;
+}
+
+.infos-sup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.infos-sup .card {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .temperature {
     font-size: 80px;
     font-weight: 200;
@@ -72,6 +91,7 @@ body.meteo-orage {
     font-size: 16px;
     opacity: 0.8;
 }
+
 
 #controls {
     margin-bottom: 40px;

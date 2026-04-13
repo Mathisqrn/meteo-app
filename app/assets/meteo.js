@@ -29,13 +29,29 @@ function afficheMeteo(data) {
     const ville = data.ville ? `${data.ville}, ${data.pays}` : 'Votre position';
 
     resultat.innerHTML = `
+        <div class="infos-principales">
         <p class="ville-nom">${ville}</p>
         <p class="temperature">${data.temperature}°</p>
         <p class="condition">${obtenirCondition(data.weathercode)}</p>
-        <p class="apparent_temperature">Température ressentie : ${data.apparent_temperature}°</p>
-        <p class="humidity">Humidité : ${data.humidity} %</p>
-        <p class="windspeed">Vitesse du vent : ${data.windspeed} km/h</p>
-        <p class="precipitation"> Précipitation : ${data.precipitation} mm </p>
+        </div>
+        <div class="infos-sup">
+        <div class="card">
+        <p>Température ressentie : </p>
+        <p class="apparent_temperature">${data.apparent_temperature}°</p>
+        </div>
+        <div class="card">
+        <p>Humidité :</p>
+        <p class="humidity"> ${data.humidity} %</p>
+        </div>
+        <div class="card">
+        <p>Vitesse du vent :<p>
+        <p class="windspeed"> ${data.windspeed} km/h</p>
+        </div>
+        <div class="card">
+        <p>Précipitation :</p>
+        <p class="precipitation">${data.precipitation} mm </p>
+        </div>
+        </div>
     `;
 }
 
