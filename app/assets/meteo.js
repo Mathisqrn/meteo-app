@@ -1,6 +1,22 @@
 const resultat = document.getElementById('resultat');
 const rechercheVille = document.getElementById('recherche-ville');
 
+function obtenirCondition(weathercode) {
+    if (weathercode === 0) {
+        return "Ensoleillé";
+    }else if (weathercode <= 3 ) {
+        return "Nuageux";
+    }else if (weathercode <= 48) {
+        return "Brouillard";
+    } else if (weathercode <= 65) {
+        return "Pluvieux";
+    } else if (weathercode <= 75) {
+        return "Neige";
+    } else {
+        return "Orageux";
+    }
+}
+
 // function qui affiche la météo
 function afficheMeteo(data) {
     if (data.erreur) {
@@ -13,17 +29,18 @@ function afficheMeteo(data) {
     const ville = data.ville ? `${data.ville}, ${data.pays}` : 'Votre position';
 
     resultat.innerHTML = `
-        <h2>${ville}</h2>
-        <p>Température : ${data.temperature}°C</p>
+        <p class="ville-nom">${ville}</p>
+        <p class="temperature">${data.temperature}°</p>
+        <p class="condition">${obtenirCondition(data.weathercode)}</p>
     `;
 }
 
 // Demander la position et la récupérer
-document.getElementById('btn-position').addEventListener('click', function() {
+document.getElementById('btn-position').addEventListener('click', function () {
     rechercheVille.style.display = 'none';
     resultat.innerHTML = '<p>Récupération de votre position...</p>';
 
-    navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(function (position) {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
 
@@ -31,18 +48,18 @@ document.getElementById('btn-position').addEventListener('click', function() {
             .then(r => r.json())
             .then(data => afficheMeteo(data));
 
-    }, function() {
+    }, function () {
         resultat.innerHTML = '<p>Position refusée ou indisponible.</p>';
     });
 });
 
 
 // récupère les données avec la recherche de la ville
-document.getElementById('btn-ville').addEventListener('click', function() {
+document.getElementById('btn-ville').addEventListener('click', function () {
     rechercheVille.style.display = 'block';
 });
 
-document.getElementById('btn-chercher').addEventListener('click', function() {
+document.getElementById('btn-chercher').addEventListener('click', function () {
     const nom = document.getElementById('input-ville').value.trim();
 
     if (!nom) return;
