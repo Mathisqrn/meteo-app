@@ -33,8 +33,9 @@ function afficheMeteo(data) {
         <p class="temperature">${data.temperature}°</p>
         <p class="condition">${obtenirCondition(data.weathercode)}</p>
         <p class="apparent_temperature">Température ressentie : ${data.apparent_temperature}°</p>
-        <p class="humidity">Humidité : ${data.humidity}%</p>
+        <p class="humidity">Humidité : ${data.humidity} %</p>
         <p class="windspeed">Vitesse du vent : ${data.windspeed} km/h</p>
+        <p class="precipitation"> Précipitation : ${data.precipitation} mm </p>
     `;
 }
 

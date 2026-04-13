@@ -29,7 +29,7 @@ class MeteoController extends AbstractController
             'query' => [
                 'latitude' => $latitude,
                 'longitude' => $longitude,
-                'current' => 'temperature_2m,weathercode,windspeed_10m,relativehumidity_2m,apparent_temperature',
+                'current' => 'temperature_2m,weathercode,windspeed_10m,relativehumidity_2m,apparent_temperature,precipitation',
                 'timezone' => 'auto',
             ]
         ])->toArray();
@@ -40,6 +40,7 @@ class MeteoController extends AbstractController
             'windspeed' => $meteo['current']['windspeed_10m'],
             'humidity' => $meteo['current']['relativehumidity_2m'],
             'apparent_temperature' => $meteo['current']['apparent_temperature'],
+            'precipitation' => $meteo['current']['precipitation'],
         ]);
     }
 
