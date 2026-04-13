@@ -24,6 +24,8 @@ cd meteo-app
 docker run --rm -v $(pwd)/app:/app -w /app composer install
 ```
 
+> **Windows** : remplacer `$(pwd)` par `${PWD}` dans les commandes.
+
 # Lancer le projet
 ```bash
 docker compose up
