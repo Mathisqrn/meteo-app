@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Météo</title>
-    {# Fonction Asset Mapper pour charger le fichier app.js #}
-    {{ importmap('app') }}
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Météo</title>
+		{# Fonction Asset Mapper pour charger le fichier app.js #}
+		{{ importmap('app') }}
+	</head>
+	<body>
 
-    <h1>Ma Météo</h1>
+		<h1>Ma Météo</h1>
 
-    <div id="modes">
-        <button id="btn-position">Ma position</button>
-        <button id="btn-ville">Rechercher une ville</button>
-    </div>
+		<div id="card">
+			<div id="resultat">
+				<p>Choisissez un mode pour afficher la météo.</p>
+			</div>
 
-    <div id="recherche-ville" style="display:none;">
-        <input type="text" id="input-ville" placeholder="Ex: Lyon, Tokyo...">
-        <button id="btn-chercher">Chercher</button>
-    </div>
+			<div id="modes">
+				<button id="btn-position">Ma position</button>
+				<button id="btn-ville">Rechercher une ville</button>
+			</div>
 
-    <div id="resultat">
-        <p>Choisissez un mode pour afficher la météo.</p>
-    </div>
+			<div id="recherche-ville" style="display:none;">
+				<input type="text" id="input-ville" placeholder="Ex: Lyon, Tokyo...">
+				<button id="btn-chercher">Chercher</button>
+			</div>
+		</div>
 
-</body>
+	</body>
 </html>
