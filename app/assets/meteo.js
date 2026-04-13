@@ -3,17 +3,17 @@ const rechercheVille = document.getElementById('recherche-ville');
 
 function obtenirCondition(weathercode) {
     if (weathercode === 0) {
-        return "Ensoleillé";
+        return "Ensoleillé ☀️";
     }else if (weathercode <= 3 ) {
-        return "Nuageux";
+        return "Nuageux ⛅";
     }else if (weathercode <= 48) {
-        return "Brouillard";
+        return "Brouillard 🌫️";
     } else if (weathercode <= 65) {
-        return "Pluvieux";
+        return "Pluvieux 🌧️";
     } else if (weathercode <= 75) {
-        return "Neige";
+        return "Neige ❄️";
     } else {
-        return "Orageux";
+        return "Orageux ⛈️";
     }
 }
 
