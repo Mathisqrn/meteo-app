@@ -3,21 +3,21 @@
 }
 
 body.meteo-soleil {
-    background: linear-gradient(#4facfe #00f2fe)
+    background: linear-gradient(#4facfe, #00f2fe)
 }
 
 body.meteo-nuages {
-    background: linear-gradient(#2c3e50 #4a6274);
+    background: linear-gradient(#2c3e50, #4a6274);
 }
 
 body.meteo-pluie {
-    background: linear-gradient(#1a1a2e #16213e);
+    background: linear-gradient(#1a1a2e, #16213e);
 }
 
 body.meteo-neige {
-    background: linear-gradient(#e0eafc #cfdef3);
+    background: linear-gradient(#e0eafc, #cfdef3);
 }
 
 body.meteo-orage {
-    background: linear-gradient(#0f0c29 #302b63);
+    background: linear-gradient(#0f0c29, #302b63);
 }

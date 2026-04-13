@@ -1,12 +1,14 @@
 const resultat = document.getElementById('resultat');
 const rechercheVille = document.getElementById('recherche-ville');
 
-// météo avec la position
+// function qui affiche la météo
 function afficheMeteo(data) {
     if (data.erreur) {
         resultat.innerHTML = `<p>${data.erreur}</p>`;
         return;
     }
+
+    appliquerFond(data.weathercode);
 
     const ville = data.ville ? `${data.ville}, ${data.pays}` : 'Votre position';
 
@@ -35,7 +37,7 @@ document.getElementById('btn-position').addEventListener('click', function() {
 });
 
 
-// météo avec la recherche de la ville
+// récupère les données avec la recherche de la ville
 document.getElementById('btn-ville').addEventListener('click', function() {
     rechercheVille.style.display = 'block';
 });
@@ -51,3 +53,20 @@ document.getElementById('btn-chercher').addEventListener('click', function() {
         .then(r => r.json())
         .then(data => afficheMeteo(data));
 });
+
+// OpenMeteo renvoie un wheathercode et on s'en sert pour changer le fond
+function appliquerFond(weathercode) {
+    const body = document.body;
+
+    if (weathercode === 0) {
+        body.className = 'meteo-soleil';
+    } else if (weathercode <= 3) {
+        body.className = 'meteo-nuages';
+    } else if (weathercode <= 65) {
+        body.className = 'meteo-pluie';
+    } else if (weathercode <= 75) {
+        body.className = 'meteo-neige';
+    } else {
+        body.className = 'meteo-orage';
+    }
+}
