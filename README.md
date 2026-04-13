@@ -42,5 +42,11 @@ Vous pouvez également cliquer sur le bouton "Rechercher une ville" pour insére
 - `docker-compose.yml` — Configuration Docker
 - `Caddyfile` — Configuration du serveur FrankenPHP
 
+## Démarche Git
+
+Ce projet a été versionné avec Git dès le début, avec un commit par étape significative.
+
+Les nouvelles fonctionnalités ont été développées sur une branche dédiée `feature/nouvelles-donnees` puis fusionnées sur `main` une fois validées.
+
 ## Auteur
 Mathisqrn https://github.com/Mathisqrn
